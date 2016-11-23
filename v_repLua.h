@@ -1,14 +1,14 @@
-// Copyright 2006-2016 Coppelia Robotics GmbH. All rights reserved. 
+// Copyright 2006-2016 Coppelia Robotics GmbH. All rights reserved.
 // marc@coppeliarobotics.com
 // www.coppeliarobotics.com
-// 
+//
 // -------------------------------------------------------------------
 // THIS FILE IS DISTRIBUTED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
 // WARRANTY. THE USER WILL USE IT AT HIS/HER OWN RISK. THE ORIGINAL
 // AUTHORS AND COPPELIA ROBOTICS GMBH WILL NOT BE LIABLE FOR DATA LOSS,
 // DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING OR
 // MISUSING THIS SOFTWARE.
-// 
+//
 // You are free to use/modify/distribute this file for whatever purpose!
 // -------------------------------------------------------------------
 //
@@ -33,7 +33,9 @@ typedef int (*luaWrap_lua_CFunction) (luaWrap_lua_State* L);
 
 LUALIB_DLLEXPORT int luaLibGet_LUA_MULTRET();
 LUALIB_DLLEXPORT int luaLibGet_LUA_MASKCOUNT();
+#if LUA_VERSION_NUM < 502
 LUALIB_DLLEXPORT int luaLibGet_LUA_GLOBALSINDEX();
+#endif
 LUALIB_DLLEXPORT luaWrap_lua_State* luaLib_luaL_newstate();
 LUALIB_DLLEXPORT void luaLib_lua_close(luaWrap_lua_State* L);
 LUALIB_DLLEXPORT void luaLib_luaL_openlibs(luaWrap_lua_State* L);
